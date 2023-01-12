@@ -1,6 +1,6 @@
 'use client';
 import { ThemeProvider } from 'next-themes';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 export const AuthContext = createContext();
 
@@ -8,10 +8,13 @@ export default function Providers({ children }) {
   const storage = sessionStorage.getItem('user');
   const [user, setUser] = useState(storage ? JSON.parse(storage) : null);
 
+  useEffect(() => {
+    sessionStorage.setItem('user', JSON.stringify(user));
+  }, [user]);
+
   function login(user) {
     console.log('login');
     setUser(user);
-    sessionStorage.setItem('user', JSON.stringify(user));
   }
   function currentUser() {
     return user;
