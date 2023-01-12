@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .grid-page {
+    grid-template-columns: auto 1fr;
+  }
+}

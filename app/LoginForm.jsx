@@ -1,18 +1,23 @@
+'use client';
 import { async } from '@firebase/util';
+import { useRouter } from 'next/navigation';
 import React, { useContext, useState } from 'react';
 import { logInEmailAndPass } from '../firebase/firebase';
 import { AuthContext } from './Providers';
 
-function LoginForm({ isOpen }) {
+function LoginForm({ isOpen, setOpen, url }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { login } = useContext(AuthContext);
+  const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email, password);
     const user = await logInEmailAndPass(email, password);
     console.log(user);
     login(user.reloadUserInfo);
+    user.reloadUserInfo && setOpen(false);
+    router.push('/');
   };
   if (isOpen) {
     return (

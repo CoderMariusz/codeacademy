@@ -1,10 +1,18 @@
 'use client';
-import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useContext, useState } from 'react';
 import LoginForm from './LoginForm';
+import { AuthContext } from './Providers';
 
 function Login() {
   const [open, setOpen] = useState(false);
-  console.log(open);
+  const { currentUser } = useContext(AuthContext);
+  const router = useRouter();
+  const user = currentUser();
+  console.log(user);
+  if (!user) {
+    router.push('/login');
+  }
   return (
     <>
       <button
@@ -14,7 +22,10 @@ function Login() {
         }}>
         Login
       </button>
-      <LoginForm isOpen={open} />
+      <LoginForm
+        isOpen={open}
+        setOpen={setOpen}
+      />
     </>
   );
 }

@@ -1,6 +1,6 @@
 import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
 import { getAnalytics } from 'firebase/analytics';
 
 const firebaseConfig = {
@@ -22,10 +22,22 @@ function getCurrentUser() {
 }
 
 async function getTodos() {
-  const querySnapshot = await getDocs(collection(db, 'todo'));
-  querySnapshot.forEach((doc) => {
-    console.log(doc.data());
-  });
+  const querySnapshot = await getDocs(collection(db, 'todos'));
+  return querySnapshot.docs.map((doc) => doc.data());
+}
+async function getTodo(id) {
+  const docRef = doc(db, 'todo', id);
+  const docSnap = await getDoc(docRef);
+  if (docSnap.exists()) {
+    console.log('Document data:', docSnap.data());
+  } else {
+    // doc.data() will be undefined in this case
+    console.log('No such document!');
+  }
+}
+async function addTodo(todo) {
+  const docRef = await addDoc(collection(db, 'todos'), todo);
+  console.log('Document written with ID: ', docRef.id);
 }
 
 function logInEmailAndPass(email, password) {
@@ -45,4 +57,4 @@ function logOutUser() {
     .catch((err) => console.log(err.message));
 }
 
-export { getCurrentUser, getTodos, logInEmailAndPass, logOutUser };
+export { getCurrentUser, getTodos, logInEmailAndPass, logOutUser, addTodo };

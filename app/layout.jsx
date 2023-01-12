@@ -7,9 +7,9 @@ export default function RootLayout({ children }) {
   return (
     <html>
       <Providers>
-        <body className='bg-zinc-800 text-slate-200 mx-auto flex flex-col'>
+        <body className='bg-zinc-800 text-slate-200 mx-auto flex flex-col h-screen'>
           <Header />
-          <div className='grid w-48 grid-cols-2'>
+          <div className='grid w-full grid-page p-3 '>
             <SideList />
             {children}
           </div>
