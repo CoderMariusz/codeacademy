@@ -1,4 +1,4 @@
-import TodosList from './todosList';
+import TodosList from './TodosList';
 
 function TodosPage() {
   return (

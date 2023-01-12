@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import Header from './Header';
 import Providers from './Providers';
-import SideList from './sideList';
+import SideList from './SideList';
 
 export default function RootLayout({ children }) {
   return (
