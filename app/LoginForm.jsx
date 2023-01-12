@@ -60,13 +60,4 @@ function LoginForm() {
   );
 }
 
-export async function getServerSideProps(context) {
-  return {
-    props: {
-      url: context.query.url,
-      user: context.query.user
-    } // will be passed to the page component as props
-  };
-}
-
 export default LoginForm;

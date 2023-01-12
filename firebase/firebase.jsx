@@ -23,6 +23,7 @@ function getCurrentUser() {
 
 async function getTodos() {
   const querySnapshot = await getDocs(collection(db, 'todos'));
+  console.log(querySnapshot.docs.map((doc) => doc.data()));
   return querySnapshot.docs.map((doc) => doc.data());
 }
 async function getTodo(id) {
