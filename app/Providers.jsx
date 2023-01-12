@@ -5,11 +5,11 @@ import { createContext, useEffect, useState } from 'react';
 export const AuthContext = createContext();
 
 export default function Providers({ children }) {
-  const storage = sessionStorage.getItem('user');
+  const storage = window?.sessionStorage?.getItem('user') || null;
   const [user, setUser] = useState(storage ? JSON.parse(storage) : null);
 
   useEffect(() => {
-    sessionStorage.setItem('user', JSON.stringify(user));
+    window.sessionStorage.setItem('user', JSON.stringify(user));
   }, [user]);
 
   function login(user) {
