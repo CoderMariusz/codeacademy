@@ -1,4 +1,4 @@
-import Login from './Login';
+import LoginButton from './LoginButton';
 
 function Header() {
   return (
@@ -8,7 +8,7 @@ function Header() {
         <p className='text-xs'>write what you need to do...</p>
       </div>
       <div>
-        <Login />
+        <LoginButton />
         {/* <User/> */}
       </div>
     </div>

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 function page() {
   return (
     <div>
@@ -5,7 +7,7 @@ function page() {
       <div>
         <h3>Todo! Time Managemen. </h3>
         <p>small app so you can add your todo daaily tasks</p>
-        <a href='/todos'>Todos</a>
+        <Link href='/todos'>Todos</Link>
       </div>
     </div>
   );

@@ -7,20 +7,24 @@ export const AuthContext = createContext();
 export default function Providers({ children }) {
   const [user, setUser] = useState(null);
 
+  useEffect(() => {
+    const Store = sessionStorage.getItem('user') || null;
+    if (Store) {
+      setUser(JSON.parse(Store));
+    }
+  }, []);
   function login(user) {
     console.log('login');
     setUser(user);
+    sessionStorage.setItem('user', JSON.stringify(user));
   }
+
   function currentUser() {
     return user;
   }
   return (
-    <ThemeProvider
-      enableSystem={true}
-      attribute='class'>
-      <AuthContext.Provider value={{ user, login, currentUser }}>
-        {children}
-      </AuthContext.Provider>
-    </ThemeProvider>
+    <AuthContext.Provider value={{ user, login, currentUser }}>
+      {children}
+    </AuthContext.Provider>
   );
 }
