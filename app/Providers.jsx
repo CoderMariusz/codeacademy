@@ -5,12 +5,7 @@ import { createContext, useEffect, useState } from 'react';
 export const AuthContext = createContext();
 
 export default function Providers({ children }) {
-  const storage = window?.sessionStorage?.getItem('user') || null;
-  const [user, setUser] = useState(storage ? JSON.parse(storage) : null);
-
-  useEffect(() => {
-    window.sessionStorage.setItem('user', JSON.stringify(user));
-  }, [user]);
+  const [user, setUser] = useState(null);
 
   function login(user) {
     console.log('login');
