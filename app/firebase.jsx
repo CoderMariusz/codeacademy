@@ -24,7 +24,12 @@ function getCurrentUser() {
 async function getTodos() {
   const querySnapshot = await getDocs(collection(db, 'todos'));
 
-  return querySnapshot.docs.map((doc) => doc.data());
+  return querySnapshot.docs.map((doc) => {
+    return {
+      id: doc.id,
+      ...doc.data()
+    };
+  });
 }
 async function getTodo(id) {
   const docRef = doc(db, 'todo', id);
