@@ -1,12 +1,9 @@
-import { getTodos } from '../firebase';
 import TodosList from './TodosList';
 
-async function TodosPage() {
-  let todos = await getTodos();
-
+function TodosPage() {
   return (
     <div className='flex justify-center items-center'>
-      <TodosList todos={todos} />
+      <TodosList />
     </div>
   );
 }

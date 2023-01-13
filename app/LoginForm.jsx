@@ -11,7 +11,6 @@ function LoginForm() {
   const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email, password);
     const user = await logInEmailAndPass(email, password);
     console.log(user);
     login(user.reloadUserInfo);

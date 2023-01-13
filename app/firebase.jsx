@@ -23,7 +23,6 @@ function getCurrentUser() {
 
 async function getTodos() {
   const querySnapshot = await getDocs(collection(db, 'todos'));
-
   return querySnapshot.docs.map((doc) => {
     return {
       id: doc.id,
@@ -47,7 +46,6 @@ async function addTodo(todo) {
 }
 
 function logInEmailAndPass(email, password) {
-  console.log('dziala');
   return signInWithEmailAndPassword(auth, email, password)
     .then((user) => {
       return user.user;
