@@ -45,7 +45,7 @@ function AddTask() {
             id='title'
             value={todo.title}
             placeholder='title'
-            className='mb-2'
+            className='mb-2 active:border-none'
             onChange={handleChange}
           />
         </label>

@@ -4,13 +4,13 @@ import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
 import { getAnalytics } from 'firebase/analytics';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDokb12U8lhlFKIUArexeCxiOBKMRCvF8I',
-  authDomain: 'portfolio-v2-374421.firebaseapp.com',
-  projectId: 'portfolio-v2-374421',
-  storageBucket: 'portfolio-v2-374421.appspot.com',
-  messagingSenderId: '276300097583',
-  appId: '1:276300097583:web:a1a2d43c83b04ee9427eda',
-  measurementId: 'G-5E77VCLEFL'
+  apiKey: 'AIzaSyBXTQKg1saKdz33UV-fVMGogO68admI8Xo',
+  authDomain: 'codeacademy-1c76a.firebaseapp.com',
+  projectId: 'codeacademy-1c76a',
+  storageBucket: 'codeacademy-1c76a.appspot.com',
+  messagingSenderId: '372294999945',
+  appId: '1:372294999945:web:116ce583b2b20b3aff4b58',
+  measurementId: 'G-770Z8Y2NT4'
 };
 
 const app = initializeApp(firebaseConfig);

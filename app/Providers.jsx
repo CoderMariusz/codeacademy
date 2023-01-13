@@ -14,7 +14,6 @@ export default function Providers({ children }) {
     }
   }, []);
   function login(user) {
-    console.log('login');
     setUser(user);
     sessionStorage.setItem('user', JSON.stringify(user));
   }
@@ -24,7 +23,11 @@ export default function Providers({ children }) {
   }
   return (
     <AuthContext.Provider value={{ user, login, currentUser }}>
-      {children}
+      <ThemeProvider
+        attribute='class'
+        enableSystem={true}>
+        {children}
+      </ThemeProvider>
     </AuthContext.Provider>
   );
 }

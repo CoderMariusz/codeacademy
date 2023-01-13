@@ -1,9 +1,9 @@
-import LoginForm from '../LoginForm';
+import LoginForm from './LoginForm';
 
 function page() {
   return (
-    <div>
-      <h1>login</h1>
+    <div className='w-full flex flex-col gap-3 items-center justify-centers'>
+      <h1>Login:</h1>
       <LoginForm />
     </div>
   );

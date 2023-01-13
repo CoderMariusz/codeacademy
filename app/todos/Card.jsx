@@ -3,7 +3,7 @@ import { GoPrimitiveDot } from 'react-icons/go';
 
 function Card({ title, description, date, time, priority, user }) {
   return (
-    <div className=' max-w-xs group lg:max-w-md border-stone-700/80 border-solid border-[1px] rounded-md hover:border-yellow-600/90 transition-all ease-in-out duration-300  '>
+    <div className=' w-full max-w-xs group lg:max-w-md border-stone-700/80 border-solid border-[1px] rounded-md hover:border-yellow-600/90 transition-all ease-in-out duration-300  '>
       <h1 className='text-center bg-zinc-600/70 p-2 group-hover:bg-yellow-700/90 transition-all ease-in-out duration-300 '>
         {title}
       </h1>

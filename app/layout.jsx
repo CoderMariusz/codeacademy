@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
   return (
     <html>
       <Providers>
-        <body className='bg-zinc-800 text-slate-200 mx-auto flex flex-col h-screen'>
+        <body className='dark:bg-zinc-800 dark:text-slate-200 mx-auto flex flex-col h-screen transition-all duration-500 ease-in-out'>
           <Header />
           <div className='grid w-full grid-page p-3 '>
             <SideList />

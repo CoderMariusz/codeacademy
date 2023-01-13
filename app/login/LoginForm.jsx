@@ -1,8 +1,8 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState } from 'react';
-import { logInEmailAndPass } from './firebase';
-import { AuthContext } from './Providers';
+import { logInEmailAndPass } from '../firebase';
+import { AuthContext } from '../Providers';
 
 function LoginForm() {
   const [email, setEmail] = useState('');
@@ -18,7 +18,7 @@ function LoginForm() {
   };
 
   return (
-    <div className='h-full w-full z-10 flex justify-center items-center absolute top-0 left-0 overflow-hidden'>
+    <div className='h-fit w-fit z-10 flex justify-center items-center overflow-hidden'>
       <form
         action='submit'
         className='grid grid-cols-1 gap-3'

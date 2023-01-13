@@ -5,7 +5,7 @@ import { MdAddTask, MdTaskAlt } from 'react-icons/md';
 
 function SideList() {
   return (
-    <div className=' w-fit text-sm pr-3'>
+    <div className=' w-fit text-sm pr-2 border-r-2 border-zinc-600/50 mr-2'>
       <a
         href='/addTask'
         className='flex flex-nowrap gap-2 mb-3'>
