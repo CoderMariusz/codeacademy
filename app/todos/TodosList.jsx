@@ -6,8 +6,8 @@ import { getTodos } from '../../firebase/firebase';
 function TodosList({ todos }) {
   console.log(todos);
   async function getTodos2() {
-    const todos = await getTodos();
-    return todos;
+    const todos2 = await getTodos();
+    return todos2;
   }
   const todos2 = getTodos2();
   console.log('second todos:', todos2);
