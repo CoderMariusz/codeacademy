@@ -1,4 +1,4 @@
-import { getTodos } from '../../firebase/firebase';
+import { getTodos } from '../firebase';
 import TodosList from './TodosList';
 
 async function TodosPage() {

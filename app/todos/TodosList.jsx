@@ -1,6 +1,6 @@
 'use client';
 import Card from './Card';
-import { getTodos } from '../../firebase/firebase';
+import { getTodos } from '../firebase';
 
 function TodosList({ todos }) {
   console.log('todos:', todos);

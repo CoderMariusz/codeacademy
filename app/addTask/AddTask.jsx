@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useContext, useState } from 'react';
-import { addTodo } from '../../firebase/firebase';
+import { addTodo } from '../firebase';
 import { AuthContext } from '../Providers';
 
 function AddTask() {
