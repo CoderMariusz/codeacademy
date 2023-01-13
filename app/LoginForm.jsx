@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState } from 'react';
-import { logInEmailAndPass } from '../firebase/firebase';
+import { logInEmailAndPass } from './firebase/firebase';
 import { AuthContext } from './Providers';
 
 function LoginForm() {
