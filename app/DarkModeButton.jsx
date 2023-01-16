@@ -14,7 +14,9 @@ function DarkModeButton() {
 
   return (
     <button
-      onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}>
+      onClick={() => {
+        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      }}>
       {currentTheme === 'dark' ? (
         <SunIcon className='w-8 h-10 text-yellow-500/80' />
       ) : (

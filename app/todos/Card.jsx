@@ -1,7 +1,18 @@
 import React from 'react';
 import { GoPrimitiveDot } from 'react-icons/go';
+import DeleteButton from './DeleteButton';
+import EditButton from './EditButton';
 
-function Card({ title, description, date, time, priority, user }) {
+function Card({
+  title,
+  description,
+  date,
+  time,
+  priority,
+  user,
+  delete: deleteTodo,
+  edit: editTodo
+}) {
   return (
     <div className=' w-full max-w-xs group lg:max-w-md border-stone-700/80 border-solid border-[1px] rounded-md hover:border-yellow-600/90 transition-all ease-in-out duration-300  '>
       <h1 className='text-center bg-zinc-600/70 p-2 group-hover:bg-yellow-700/90 transition-all ease-in-out duration-300 '>
@@ -11,8 +22,12 @@ function Card({ title, description, date, time, priority, user }) {
         <p className='line-clamp-5 pb-1 border-b-2 border-zinc-700/40 '>
           {description}
         </p>
+        <div className='flex justify-end gap-2 m-2'>
+          <EditButton edit={editTodo} />
+          <DeleteButton del={deleteTodo} />
+        </div>
         <div className='flex justify-between'>
-          <div>
+          <div className='text-sm'>
             <p>{time}</p>
             <p>{date}</p>
           </div>

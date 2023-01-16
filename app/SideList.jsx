@@ -6,34 +6,39 @@ import { MdAddTask, MdTaskAlt } from 'react-icons/md';
 function SideList() {
   return (
     <div className=' w-fit text-sm pr-2 border-r-2 border-zinc-600/50 mr-2'>
-      <a
-        href='/addTask'
-        className='flex flex-nowrap gap-2 mb-3'>
-        <MdAddTask className='h-6 w-6' />
-        <p className='whitespace-nowrap hidden sm:block'>New Task</p>
-      </a>
-      <a
-        href='/todos'
-        className='flex flex-nowrap gap-2 mb-3 '>
-        <FaTasks className='h-6 w-6' />
-        <p className='whitespace-nowrap hidden sm:block'>Tasks</p>
-      </a>
-      <button
-        onClick={() => {
-          console.log('project');
-        }}
-        className='flex flex-nowrap gap-2 mb-3'>
-        <MdTaskAlt className='h-6 w-6' />
-        <p className='whitespace-nowrap hidden sm:block'>Project</p>
-      </button>
-      <button
-        onClick={() => {
-          console.log('setting');
-        }}
-        className='flex flex-nowrap gap-2 mb-3'>
-        <AiFillSetting className='h-6 w-6' />
-        <p className='whitespace-nowrap hidden sm:block'>Setting</p>
-      </button>
+      <div>
+        <h2 className='font-bold text-xl underline decoration-yellow-500/80 underline-offset-4'>
+          Todo List v1.0
+        </h2>
+        <a
+          href='/addTask'
+          className='flex flex-nowrap gap-2 mb-3'>
+          <MdAddTask className='h-6 w-6' />
+          <p className='whitespace-nowrap hidden sm:block'>New Task</p>
+        </a>
+        <a
+          href='/todos'
+          className='flex flex-nowrap gap-2 mb-3 '>
+          <FaTasks className='h-6 w-6' />
+          <p className='whitespace-nowrap hidden sm:block'>Tasks</p>
+        </a>
+        <button
+          onClick={() => {
+            console.log('project');
+          }}
+          className='flex flex-nowrap gap-2 mb-3'>
+          <MdTaskAlt className='h-6 w-6' />
+          <p className='whitespace-nowrap hidden sm:block'>Project</p>
+        </button>
+        <button
+          onClick={() => {
+            console.log('setting');
+          }}
+          className='flex flex-nowrap gap-2 mb-3'>
+          <AiFillSetting className='h-6 w-6' />
+          <p className='whitespace-nowrap hidden sm:block'>Setting</p>
+        </button>
+      </div>
     </div>
   );
 }
